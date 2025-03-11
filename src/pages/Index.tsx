@@ -5,7 +5,7 @@ import { CheckIcon, PlayIcon, VolumeIcon } from "lucide-react";
 import { useEffect } from "react";
 
 const Index = () => {
-  // Add Google Fonts for the serif font used in headers
+  // Add Google Fonts for the serif font used in headers and Hebrew font support
   useEffect(() => {
     // Add Playfair Display for the serif headers
     const playfairLink = document.createElement("link");
@@ -13,23 +13,23 @@ const Index = () => {
     playfairLink.rel = "stylesheet";
     document.head.appendChild(playfairLink);
 
-    // Add Poppins for the body text
-    const poppinsLink = document.createElement("link");
-    poppinsLink.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
-    poppinsLink.rel = "stylesheet";
-    document.head.appendChild(poppinsLink);
+    // Add Heebo for Hebrew text
+    const heeboLink = document.createElement("link");
+    heeboLink.href = "https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap";
+    heeboLink.rel = "stylesheet";
+    document.head.appendChild(heeboLink);
 
     return () => {
       document.head.removeChild(playfairLink);
-      document.head.removeChild(poppinsLink);
+      document.head.removeChild(heeboLink);
     };
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div className="flex flex-col min-h-screen" style={{ fontFamily: "'Heebo', sans-serif", direction: "rtl" }}>
       {/* Red banner at top */}
       <div className="bg-red-600 text-white text-center py-1 px-4">
-        <p className="text-sm font-medium">International Bestseller With Over 300,000+ Copies Sold!</p>
+        <p className="text-sm font-medium">סודי ביותר מהכספת של הנקסט לבל: בעקבות המלחמה ל 72 שעות בלבד</p>
       </div>
 
       {/* Hero Section */}
@@ -37,15 +37,18 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
-              <h2 className="text-gray-700 text-xl mb-2">Want To Build Your <span className="font-semibold">Very First Online Business</span>?</h2>
+              <h2 className="text-gray-700 text-xl mb-2">לעצלנים שלא רוצים לקרוע את התחת באורגני רק בשביל לראות 'קארדקום רכישות' במייל…</h2>
               <h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 leading-tight" 
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Get This FREE Book
+                ברוכים הבאים לדף שישנה לכם את החיים
               </h1>
+              <p className="text-lg md:text-xl mb-6 font-bold">
+                ״GAME CHANGER״
+              </p>
               <p className="text-lg md:text-xl mb-6">
-                <span className="font-semibold">DotCom Secrets Is The #1 Playbook</span> On How To Go From Zero To Success With Your Online Business
+                איך מהלך שלקח לי 30 דק' להכין הביא 1,398 סליקות בחודש של המלחמה
               </p>
 
               {/* Video placeholder */}
@@ -65,7 +68,7 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <img 
                 src="/placeholder.svg" 
-                alt="DotCom Secrets Book Cover" 
+                alt="ספר Game Changer" 
                 className="w-full max-w-[300px] mb-4"
               />
               <div className="flex items-center mb-4">
@@ -76,287 +79,464 @@ const Index = () => {
                     </svg>
                   ))}
                 </div>
-                <span className="ml-2 text-gray-700">4.6 - 2,340 Amazon Ratings</span>
+                <span className="mr-2 text-gray-700">4.6 - 2,340 דירוגים</span>
               </div>
               <Button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-md">
-                Get Your Free Copy Now
+                יהב אני בפנים!
               </Button>
-              <p className="text-xs text-gray-500 mt-2">You pay only $9.95 for shipping and handling in US ($19.95 intl)</p>
+              <p className="text-xs text-gray-500 mt-2">תקרא לי משוגע ותחזיק חזק כי ל 72 שעות הקרובות</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* Main Message Section */}
       <section className="bg-gray-50 py-8">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Testimonial 1 */}
-            <div className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
-              <img 
-                src="/placeholder.svg" 
-                alt="Tony Robbins" 
-                className="w-20 h-20 rounded-md object-cover"
-              />
-              <div>
-                <p className="text-sm text-gray-700 mb-2">
-                  "A Simple Process That Any Company Can Use To Geometrically Improve Their Traffic, Conversion, And Sales Online."
-                </p>
-                <p className="font-bold text-gray-800">Tony Robbins</p>
-              </div>
+          <div className="max-w-3xl mx-auto text-right">
+            <p className="text-lg mb-4">
+              החלטתי לחשוף מהלך GAME CHANGER שהולך לעזור לך 'לגנוב' בצורה חוקית את כל הלקוחות הפוטנציאלים בשוק
+            </p>
+            <p className="text-lg mb-4">
+              (לפני שהמתחרים שלך עושים את זה)
+            </p>
+            <p className="text-lg font-bold mb-4">
+              חוקי המשחק השתנו.
+            </p>
+            <p className="text-lg mb-4">
+              פעם בתקופה זה קורה…
+            </p>
+            <p className="text-lg mb-4">
+              מערבבים את החבילת קלפים ומחלקים מחדש…
+            </p>
+            <p className="text-lg mb-4">
+              אלו עם עשרות אלפי עוקבים מאבדים שליטה
+            </p>
+            <p className="text-lg mb-4">
+              ונפתח מקום לשחקנים חדשים.
+            </p>
+            <p className="text-lg mb-4">
+              אני קורא לתקופה הזאת:
+            </p>
+            <p className="text-xl font-bold mb-6">
+              ״GAME CHANGER״ עבור שחקנים החדשים.
+            </p>
+            <div className="flex justify-center mt-4 mb-8">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md">
+                יהב אני בפנים!
+              </Button>
             </div>
-
-            {/* Testimonial 2 */}
-            <div className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm">
-              <img 
-                src="/placeholder.svg" 
-                alt="Dan S. Kennedy" 
-                className="w-20 h-20 rounded-md object-cover"
-              />
-              <div>
-                <p className="text-sm text-gray-700 mb-2">
-                  "Go Into This Book In Search Of Deep Understanding And Profound Clarity About The Strategies And Tactics Of Direct Response Marketing To Be Applied In The Online Media Universe."
-                </p>
-                <p className="font-bold text-gray-800">Dan S. Kennedy</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-6">
-            <Button variant="outline" className="flex items-center gap-2">
-              <span>Learn More</span>
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path>
-              </svg>
-            </Button>
           </div>
         </div>
       </section>
 
-      {/* Main Headline Section */}
-      <section className="py-12 text-center">
+      {/* Story Section */}
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-xl text-gray-700 mb-4">This One Book Has Helped</h2>
-          <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Thousands Of Entrepreneurs, Small<br />Business Owners, And Creatives
-          </h2>
-          <p className="text-xl mb-8">
-            <span className="text-red-600 font-bold">Build Thriving Online Businesses</span> From Scratch!
-          </p>
+          <div className="max-w-3xl mx-auto text-right">
+            <h2 className="text-2xl font-bold mb-6">לא הייתי מוכן לזה…</h2>
+            <p className="text-lg mb-4">
+              בשבוע הראשון של המלחמה, כמו 99% מהעסקים בישראל, הפעילות העסקית שלי קפאה.
+            </p>
+            <p className="text-lg mb-4">
+              המכירות הפסיקו… הסליקות נעצרו והמשק הישראלי נכנס ל…
+            </p>
+            <p className="text-lg font-bold mb-4">
+              פסק זמן.
+            </p>
+            <p className="text-lg mb-4">
+              ישראל בהלם. ובצדק.
+            </p>
+            <p className="text-lg mb-4">
+              אבל כמו כל בעל עסק הבנתי שהמדינה לא תאכיל אותי במענקים (וצדקתי)
+            </p>
+            <p className="text-lg mb-4">
+              מי שמשלם בסוף את כל הוצאות המלחמה אלו משלמי המיסים.
+            </p>
+            <p className="text-lg mb-4">
+              כמוני. כמוך.
+            </p>
+            <p className="text-lg mb-4">
+              אז…
+            </p>
+            <p className="text-lg mb-4">
+              הייתי חייב לרכז את כל יכולות המרקטינג שלי
+            </p>
+            <p className="text-lg mb-4">
+              את כל האסטרטגיות העסקיות שלי שהביאו את הלקוחות שלנו להכנסות משותפות של יותר מ 50M שקל בשנה.
+            </p>
+            <p className="text-lg mb-4">
+              את כל הניסיון היזמי שלי שהאחראי על יותר מ 15M שקל מכירות אונליין ב 5 שנים האחרונות
+            </p>
+            <p className="text-lg font-bold mb-4">
+              למהלך אחד.
+            </p>
+            <p className="text-lg mb-4">
+              מהלך אחד שיעשה מהפך. מהלך אחד שישנה הכל.
+            </p>
+            <p className="text-lg mb-4">
+              אחרי שעות של מחשבה, מחקר ופיתוח זה קרה…
+            </p>
+            <p className="text-lg font-bold mb-4">
+              מצאתי מהלך שמשנה הכל. מצאתי מהלך GAME CHANGER
+            </p>
+            <p className="text-lg mb-4">
+              לקח לי 30 דקות על השעון להכין ולשגר לאוויר
+            </p>
+            <p className="text-lg mb-4">
+              התוצאה?
+            </p>
+            <p className="text-lg font-bold mb-4">
+              גשם של סליקות באונליין.
+            </p>
+            <p className="text-xl font-bold mb-6 text-center">
+              1,398 סליקות בחודש של מלחמה.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Success Stories */}
+      {/* No Story Grinding Section */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Success Story 1 - Eileen Wilder with the provided image */}
-            <Card>
-              <CardContent className="p-4">
-                <img 
-                  src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/4d592909-3426-4cf6-b1e4-7ba22b20946d/GPinHXJGnuXlgZGxVo1XY/1741703139769-pasted-image-1741703132472.png" 
-                  alt="Eileen Wilder" 
-                  className="w-full aspect-square object-cover rounded-md mb-4"
-                />
-                <p className="text-sm text-gray-700 mb-3">
-                  "I Didn't Know What A Funnel Was Before Reading DotCom Secrets, But This Book Changed Everything For Me! From Uber Driving To Winning Multiple Two Comma Club Awards!"
-                </p>
-                <p className="font-bold text-gray-800">Eileen Wilder</p>
-              </CardContent>
-            </Card>
-
-            {/* Success Story 2 */}
-            <Card>
-              <CardContent className="p-4">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Eric Thayne" 
-                  className="w-full aspect-square object-cover rounded-md mb-4"
-                />
-                <p className="text-sm text-gray-700 mb-3">
-                  "DotCom Secrets Blew My Mind When I First Read It! I Remember Thinking In All My Years Of Business, Why Didn't I Learn These Principles For The First Time!"
-                </p>
-                <p className="font-bold text-gray-800">Eric Thayne</p>
-              </CardContent>
-            </Card>
-
-            {/* Success Story 3 */}
-            <Card>
-              <CardContent className="p-4">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Anissa Holmes" 
-                  className="w-full aspect-square object-cover rounded-md mb-4"
-                />
-                <p className="text-sm text-gray-700 mb-3">
-                  "DotCom Secrets Is THE Go To Book For Both A Mindset Businesses. The Survey Funnel Alone Has Transformed Our Practice, Bringing In Hundreds Of New Qualified Leads A Month."
-                </p>
-                <p className="font-bold text-gray-800">Anissa Holmes</p>
-              </CardContent>
-            </Card>
-
-            {/* Success Story 4 */}
-            <Card>
-              <CardContent className="p-4">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Annie Grace" 
-                  className="w-full aspect-square object-cover rounded-md mb-4"
-                />
-                <p className="text-sm text-gray-700 mb-3">
-                  "This Book Changed My Business And My Life. I've Read It Cover To Cover Multiple Times And It's The Single Best Marketing Book On The Planet!"
-                </p>
-                <p className="font-bold text-gray-800">Annie Grace</p>
-              </CardContent>
-            </Card>
+          <div className="max-w-3xl mx-auto text-right">
+            <h2 className="text-2xl font-bold mb-6">בלי לטחון בסטורי.</h2>
+            <p className="text-lg mb-4">
+              אם אתה עוקב אחרי באינסטה אתה יודע שאני כמעט לא מעלה לינקים בסטורי, למה? כי אני יודע להפוך גולשים זרים שפגשו אותי בפעם הראשונה ללקוחות מעריצים שסולקים כל מה שאני מציע.
+            </p>
+            <p className="text-lg mb-4">
+              (ועכשיו תגלה איך)
+            </p>
+            <div className="flex justify-center mt-4 mb-8">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md">
+                יהב אני בפנים!
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Claim Your Copy Section */}
-      <section className="py-12">
+      {/* Lucky Section */}
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold tracking-widest text-gray-700 mb-4">C L A I M  Y O U R</h2>
-            <h3 
+          <div className="max-w-3xl mx-auto text-right">
+            <h2 className="text-2xl font-bold mb-6">אתה בר מזל.</h2>
+            <p className="text-lg mb-4">
+              אתה יודע, לא היית אמור לקרוא את הדף הזה לעולם… הדף הזה לא היה אמור לעלות לאוויר.
+            </p>
+            <p className="text-lg mb-4">
+              עד שזה קרה.
+            </p>
+            <p className="text-lg mb-4">
+              לפני חודשיים, עליתי להדרכה אקסקלוסיבית ללקוחות של הנקסט לבל בלבד.
+            </p>
+            <p className="text-lg mb-4">
+              (כאלה ששילמו 35,000 + מע״מ על ליווי עסקי)
+            </p>
+            <p className="text-lg mb-4">
+              עם ניתוח, מסקנות, תובנות וים פרקטיקה על מהלך ה - ״GAME CHANGER״
+            </p>
+            <p className="text-lg mb-4">
+              שאחראי על 1,398 סליקות בחודש.
+            </p>
+            <p className="text-lg mb-4">
+              אלו ההודעות שקיבלתי 30 דק' לאחר שההדרכה הסתיימה:
+            </p>
+            <div className="bg-gray-100 p-4 rounded-lg mb-6">
+              <p className="text-gray-700">[תמונה של הודעות]</p>
+            </div>
+            <p className="text-lg mb-4">
+              ברגע ששיתפתי בסטורי כל העוקבים התנפלו ודרשו גם:
+            </p>
+            <div className="bg-gray-100 p-4 rounded-lg mb-6">
+              <p className="text-gray-700">[תמונה של הודעות]</p>
+            </div>
+            <p className="text-lg mb-4">
+              אחרי התלבטות של 24 שעות הגעתי למסקנה -
+            </p>
+            <p className="text-lg font-bold mb-4">
+              אני אתן הזדמנות רק לעוקבים שלי…
+            </p>
+            <p className="text-lg mb-4">
+              בלי להריץ ממומן ובלי להכניס זרים הביתה.
+            </p>
+            <p className="text-lg mb-4">
+              החלטתי לפתוח את הכספת של הנקסט לבל ולהוציא את ההדרכה שתשנה עבורך הכל…
+            </p>
+            <p className="text-lg mb-4">
+              יותר חזק מלידים… יותר חזק מעוקבים…
+            </p>
+            <p className="text-lg font-bold mb-4">
+              אני רוצה לגלות לך:
+            </p>
+            <p className="text-xl font-bold mb-6 text-center">
+              איך להביא 1,000 לקוחות חדשים בחודש.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Offer Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-lg mb-4">
+              ל 72 שעות הקרובות בלבד… אני גאה לשחרר לאוויר את המאסטרקלאס:
+            </p>
+            <h2 
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Hardcover Copy Of 'DotCom Secrets'
-            </h3>
-            <p className="text-lg">
-              Today And Receive The Following <span className="text-red-600 font-bold">Bonuses For Free!</span>
+              ״GAME CHANGER״
+            </h2>
+            <p className="text-lg mb-8">
+              מהלך אחד שהולך לשנות עבורך הכל ולהוריד גשם של סליקות באונליין.
             </p>
-          </div>
 
-          {/* Pricing Box */}
-          <div className="max-w-3xl mx-auto bg-amber-50 border border-amber-200 rounded-lg p-8 relative">
-            <div className="absolute -right-4 -top-4 bg-amber-100 border border-amber-300 rounded-full p-2 rotate-12">
-              <span className="text-sm font-bold">SCIENCE FREE</span>
+            <div className="bg-white p-6 rounded-lg shadow-md mb-8 text-right">
+              <h3 className="text-xl font-bold mb-4">במשך 120 דקות מאסטרקלאס תגלה:</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>איך לעלות על GAME CHANGER OFFER ולתת הצעה שתגרום לכל הלקוחות הפוטנציאלים לבחור דווקא בך!</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>איך לחשוב על רעיון רב מכר שמייצר באזזז היסטרי ברשת וגורם לגולשים 'לרכל' על העסק שלך</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>איך לחבר הכל לאסטרטגיה עסקית באונליין בסטייל מעגל האקו סיסטם</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <span>איך להרכיב את כל החתיכות בפאזל למהלך GAME CHANGER שהולך להביא 1,000 לקוחות בחודש</span>
+                </li>
+              </ul>
             </div>
-            
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6 text-center">Everything Included:</h3>
-            
-            <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-2">
-                <CheckIcon className="h-5 w-5 text-red-600 mt-0.5" />
-                <div className="flex justify-between w-full">
-                  <span className="font-medium">DotCom Secrets Hardcover</span>
-                  <span className="text-green-600 font-bold">$37 FREE</span>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-2">
-                <CheckIcon className="h-5 w-5 text-red-600 mt-0.5" />
-                <div className="flex justify-between w-full">
-                  <span className="font-medium">3 Core Sales Funnels EBook</span>
-                  <span className="text-green-600 font-bold">$47 FREE</span>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-2">
-                <CheckIcon className="h-5 w-5 text-red-600 mt-0.5" />
-                <div className="flex justify-between w-full">
-                  <span className="font-medium">Follow-Up Funnels EBook</span>
-                  <span className="text-green-600 font-bold">$47 FREE</span>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-2">
-                <CheckIcon className="h-5 w-5 text-red-600 mt-0.5" />
-                <div className="flex justify-between w-full">
-                  <span className="font-medium">108 Split-Test EBook</span>
-                  <span className="text-green-600 font-bold">$47 FREE</span>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-2">
-                <CheckIcon className="h-5 w-5 text-red-600 mt-0.5" />
-                <div className="flex justify-between w-full">
-                  <span className="font-medium">Funnel Audibles Video</span>
-                  <span className="text-green-600 font-bold">$97 FREE</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-green-600 mb-2">Your Price Today: Free!</h3>
-              <p className="text-gray-700 mb-4">List Price: <span className="line-through">$274.99</span></p>
-              <p className="text-sm text-gray-700 mb-6">
-                Just Pay The Small Shipping & Handling Fee And I'll Deliver A Hardcover Copy Of DotCom Secrets To Wherever You Live!
-              </p>
-              <p className="text-xs text-gray-600 mb-6">
-                (Sure— You Could Order The Book From Amazon And Pay $36.99, Or You Can Order It Through This Page Right Now And Secure All Of The FREE Bonuses And Just Pay The Tiny Shipping & Handling Fee!)
-              </p>
-            </div>
-            
-            <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-md text-lg">
-              Get Your Free Copy Now
-            </Button>
-            <p className="text-xs text-center text-gray-500 mt-2">You pay only $9.95 for shipping and handling in US ($19.95 intl)</p>
+
+            <h3 className="text-xl font-bold mb-4">אבל רגע, זה לא הכל…</h3>
+            <p className="text-lg mb-6">
+              החלטתי לשבור את השוק (שוב) ולתת לך בונוסים בשווי מאות שקלים שמטופש לסרב להם!
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Final Section */}
+      {/* Bonuses Section */}
+      <section className="py-8 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {/* Bonus 1 */}
+            <Card>
+              <CardContent className="p-4 text-right">
+                <h3 className="text-xl font-bold mb-3">בונוס 1: מיליון דולר מוקאפ</h3>
+                <p className="text-sm text-gray-700 mb-3">
+                  חוסך לך מאות שקלים על גרפיקאיות - אם אתה מוכר קורסים, אתה מוכר ערך עטוף באוויר זה למה אתה חייב המחשה ויזואלית. בשפה המקצועית אנחנו קוראים לזה: מוקאפ. עיצבנו לך מוקאפ בקאנבה. אתה רק צריך להכניס את התמונות שלך ויש לך מיליון דולר מוקאפ להשתיל בדפי מכירה בשביל להטיס את היחס המרה.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Bonus 2 */}
+            <Card>
+              <CardContent className="p-4 text-right">
+                <h3 className="text-xl font-bold mb-3">בונוס 2: הפריצה לחו״ל עם קורסים דיגיטליים</h3>
+                <p className="text-sm text-gray-700 mb-3">
+                  ב 2020 תרגמנו את כל הקורסים הדיגיטליים שלנו לאנגלית וככה כל קורס הפך לבינלאומי. פתחתי חברה בע״מ חדשה שהגיע למחזור מכירות של מיליון דולר בשנה הראשונה. בבונוס השני, ריכזתי לך 7 צעדים שעברנו בדרך למיליון דולר.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-12 bg-amber-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-4">השווי האמיתי של המאסטרקלאס פלוס בונוסים הוא בעיניים עצומות:</h3>
+            <p className="text-3xl font-bold mb-6">12,248 ש״ח</p>
+            <p className="text-lg mb-4">
+              עכשיו מה שאני הולך להציע לך עוד רגע, לא הגיוני.
+            </p>
+            <p className="text-lg mb-4">
+              אני עדיין בהלם שאני כותב את זה…
+            </p>
+            <p className="text-lg mb-4">
+              אבל הבטחתי לעצמי לתת לך את המקסימום במינימום. הבטחתי לעזור לכמה שיותר בעלי עסקים בתקופת מלחמה.
+            </p>
+            <p className="text-lg mb-4">
+              הבטחתי לעצום עיניים ולנשוך שפתיים
+            </p>
+            <p className="text-lg font-bold mb-4">
+              ל 72 שעות בלבד -
+            </p>
+            <p className="text-lg mb-4">
+              ההזדמנות שלך לקבל יתרון משמעותי על כל המתחרים ב 2024
+            </p>
+            <p className="text-lg mb-4">
+              היא רק
+            </p>
+            <p className="text-4xl font-bold text-red-600 mb-6">47 שקל</p>
+            <p className="text-lg mb-4">
+              לא חסר אפס.
+            </p>
+            <p className="text-lg mb-4">
+              המחיר שלך הוא רק:
+            </p>
+            <p className="text-3xl font-bold mb-6">47 שקל!</p>
+            <p className="text-lg mb-6">
+              ובסיום התשלום אתה מקבל את כל מה שכתבתי תוך 17 שניות ישר למייל.
+            </p>
+            <p className="text-lg mb-4">
+              אז קדימה.
+            </p>
+            <p className="text-lg mb-6">
+              תלחץ על הכפתור כאן למטה, מלא את המייל בטופס, תאשר את התשלום ותרים מהלך שהולך לשנות בשבילך הכל…
+            </p>
+            <p className="text-lg mb-2">
+              שווי אמיתי: 12,248 שקל!
+            </p>
+            <p className="text-lg mb-6">
+              בשבילך ל 72 שעות בלבד:
+            </p>
+            <p className="text-2xl font-bold mb-6">רק 47 שקל</p>
+            <Button className="w-full max-w-md mx-auto bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-6 rounded-md text-lg">
+              יהב אני בפנים!
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-right">
+            <h2 className="text-2xl font-bold mb-6">אם אנחנו עדיין לא מכירים…</h2>
+            <p className="text-lg mb-4">
+              אז היי, קוראים לי יהב רובין מחבר רב המכר ״איך באמת להתעשר באונליין״ ומייסד מועדון העסקים המוביל בישראל נקסט לבל בע״מ.
+            </p>
+            <p className="text-lg mb-4">
+              אחרי שהצמחתי את העסק של ארוסה שלי (נטלי מילוא) ל 10M שקל ממכירות באונליין,
+            </p>
+            <p className="text-lg mb-4">
+              אחרי שיצאתי לחו״ל עם קורסים דיגיטליים והכנסתי מיליון דולר בשנה הראשונה,
+            </p>
+            <p className="text-lg mb-4">
+              הקמתי את מועדון העסקים המוביל בישראל: נקסט לבל בע״מ שכיום ליווה מעל 100 יזמים (החזקים בישראל) למעל 50,000,000 שקל הכנסות.
+            </p>
+            <p className="text-lg mb-4">
+              יש מכנים אותי 'הקוסם באונליין' ויש מספרים שאני גאון עסקי
+            </p>
+            <p className="text-lg mb-4">
+              אבל האמת?
+            </p>
+            <p className="text-lg font-bold mb-4">
+              אני אדם פשוט בדיוק כמוך.
+            </p>
+            <p className="text-lg mb-4">
+              (לפי הנתונים שקיבלתי אני נחשב אפילו 'מתחת לממוצע').
+            </p>
+            <p className="text-lg mb-4">
+              לא גדלתי למשפחה עשירה אין לי בגרות ויש לי מחלה גנטית שמונעת ממני לעבוד פיזית קשה
+            </p>
+            <p className="text-lg mb-4">
+              סיימתי את הצבא עם 2 אופציות:
+            </p>
+            <p className="text-lg font-bold mb-4">
+              להתעשר או להיזרק לרחוב.
+            </p>
+            <p className="text-lg mb-4">
+              אחרי אינסוף צלקות בעולם היזמות,
+            </p>
+            <p className="text-lg mb-4">
+              הצלחתי.
+            </p>
+            <p className="text-lg mb-4">
+              ועכשיו אחרי שנה וחצי בתור יועץ עסקי לצמיחה באונליין - עם מעל 100 לקוחות פרימיום ומעל 5,000 תלמידים שרכשו את הקורסים שלי.
+            </p>
+            <p className="text-lg mb-4">
+              הבאתי את הדבר הגדול הבא…
+            </p>
+            <p className="text-xl font-bold mb-6 text-center">
+              ״GAME CHANGER״
+            </p>
+            <p className="text-lg mb-4">
+              מהלך מהיר שהולך לעזור לך 'לגנוב' בצורה חוקית את כל הלקוחות הפוטנציאלים בשוק (לפני שהמתחרים שלך עושים את זה)
+            </p>
+            <p className="text-lg mb-4">
+              במקום שווי אמיתי של 12,480 שקל!
+            </p>
+            <p className="text-lg mb-4">
+              המחיר שלך להיום בלבד הוא רק:
+            </p>
+            <p className="text-2xl font-bold mb-6 text-center">
+              47 שקל!
+            </p>
+            <div className="flex justify-center mt-4 mb-8">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md">
+                יהב אני בפנים!
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
       <section className="py-12 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 
-            className="text-3xl font-bold text-gray-800 mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            DotCom Secrets
-          </h2>
-          <h3 
-            className="text-2xl md:text-3xl font-bold text-gray-800 mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Is The Step-By-Step Shortcut
-          </h3>
-          <p className="text-lg mb-8">
-            To The <span className="text-red-600 font-bold">Business, Life,</span> And The <span className="text-red-600 font-bold">Income</span> You Want And Deserve!
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h4 className="font-bold text-gray-800 mb-2">28 Secrets To Selling Anything Online</h4>
-              <ul className="text-left space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">Works for any business, regardless of industry</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">Easy-to-follow instructions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">Step-by-step guides</span>
-                </li>
-              </ul>
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-right">
+            <h2 className="text-2xl font-bold mb-6">״יהב, איך אני יודע אם מהלך GAME CHANGER מתאים לעסק שלי?״</h2>
+            <p className="text-lg mb-4">
+              אם יש לך עסק ולא נכנסים לך כל יום לקוחות חדשים אז מהלך GAME CHANGER בול בשבילך.
+            </p>
+            <p className="text-lg mb-4">
+              במאסטרקלאס, אני מגלה לך כל מה שאתה צריך בשביל לטוס לנקסט לבל ולגייס 1,000 לקוחות חדשים כל חודש.
+            </p>
+            <p className="text-lg mb-4">
+              תבין, 1,000 לקוחות בחודש הולכים לשנות את החיים.
+            </p>
+            <p className="text-lg mb-4">
+              מדובר על עוד 1,000 אנשים שפתחו את הארנק וסלקו אצלך בעסק… יותר חזק מלידים, יותר חזק מעוקבים, מדובר על לקוחות משלמים.
+            </p>
+            <p className="text-lg mb-4">
+              ועכשיו? יש לך הזדמנות לשים יד -
+            </p>
+            <p className="text-lg mb-4">
+              במקום שווי אמיתי של 12,480 שקל!
+            </p>
+            <p className="text-lg mb-4">
+              המחיר שלך להיום בלבד הוא רק:
+            </p>
+            <p className="text-2xl font-bold mb-6 text-center">
+              47 שקל!
+            </p>
+            <div className="flex justify-center mt-4 mb-8">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md">
+                יהב אני בפנים!
+              </Button>
             </div>
 
-            <div>
-              <h4 className="font-bold text-gray-800 mb-2">393 Pages</h4>
-              <ul className="text-left space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">Everything you need to build and scale your very first online business</span>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-gray-800 mb-2">1 Easy-To-Master Method</h4>
-              <ul className="text-left space-y-2">
-                <li className="flex items-start gap-2">
-                  <span className="text-sm">•</span>
-                  <span className="text-sm">Read this book, implement these steps, and see your business grow</span>
-                </li>
-              </ul>
+            <h2 className="text-2xl font-bold mb-6">״אני לא איזה אושיית רשת עם מיליון עוקבים באינסטה, המהלך עדיין מתאים לי?״</h2>
+            <p className="text-lg mb-4">
+              גם אני לא אושיית רשת עם מיליון עוקבים ו - 90% מהמכירות שלי מגיעות דרך פרסום ממומן, במקום שכמות עוקבים לא מעניינת אף אחד.
+            </p>
+            <p className="text-lg mb-4">
+              אז כן, מהלך GAME CHANGER בהחלט מתאים לך.
+            </p>
+            <p className="text-lg mb-4">
+              גם אין לך עוקבים ואתה לא מוכר בתחום, מהלך GAME CHANGER יכול לייצר מהפך בעסק שלך
+            </p>
+            <p className="text-lg mb-4">
+              המחיר שלך להיום בלבד הוא רק:
+            </p>
+            <p className="text-2xl font-bold mb-6 text-center">
+              47 שקל!
+            </p>
+            <div className="flex justify-center mt-4 mb-8">
+              <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-md">
+                יהב אני בפנים!
+              </Button>
             </div>
           </div>
         </div>
