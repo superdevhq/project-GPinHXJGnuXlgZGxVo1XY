@@ -153,11 +153,11 @@ const Index = () => {
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Success Story 1 */}
+            {/* Success Story 1 - Eileen Wilder with the provided image */}
             <Card>
               <CardContent className="p-4">
                 <img 
-                  src="/placeholder.svg" 
+                  src="https://ellprnxjjzatijdxcogk.supabase.co/storage/v1/object/public/superdev-project-images/4d592909-3426-4cf6-b1e4-7ba22b20946d/GPinHXJGnuXlgZGxVo1XY/1741703139769-pasted-image-1741703132472.png" 
                   alt="Eileen Wilder" 
                   className="w-full aspect-square object-cover rounded-md mb-4"
                 />
