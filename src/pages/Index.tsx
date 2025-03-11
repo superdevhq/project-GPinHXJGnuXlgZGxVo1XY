@@ -2,10 +2,31 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckIcon, PlayIcon, VolumeIcon } from "lucide-react";
+import { useEffect } from "react";
 
 const Index = () => {
+  // Add Google Fonts for the serif font used in headers
+  useEffect(() => {
+    // Add Playfair Display for the serif headers
+    const playfairLink = document.createElement("link");
+    playfairLink.href = "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap";
+    playfairLink.rel = "stylesheet";
+    document.head.appendChild(playfairLink);
+
+    // Add Poppins for the body text
+    const poppinsLink = document.createElement("link");
+    poppinsLink.href = "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap";
+    poppinsLink.rel = "stylesheet";
+    document.head.appendChild(poppinsLink);
+
+    return () => {
+      document.head.removeChild(playfairLink);
+      document.head.removeChild(poppinsLink);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{ fontFamily: "'Poppins', sans-serif" }}>
       {/* Red banner at top */}
       <div className="bg-red-600 text-white text-center py-1 px-4">
         <p className="text-sm font-medium">International Bestseller With Over 300,000+ Copies Sold!</p>
@@ -17,7 +38,12 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-gray-700 text-xl mb-2">Want To Build Your <span className="font-semibold">Very First Online Business</span>?</h2>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4">Get This FREE Book</h1>
+              <h1 
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 leading-tight" 
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Get This FREE Book
+              </h1>
               <p className="text-lg md:text-xl mb-6">
                 <span className="font-semibold">DotCom Secrets Is The #1 Playbook</span> On How To Go From Zero To Success With Your Online Business
               </p>
@@ -111,7 +137,10 @@ const Index = () => {
       <section className="py-12 text-center">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-xl text-gray-700 mb-4">This One Book Has Helped</h2>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+          <h2 
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 leading-tight"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Thousands Of Entrepreneurs, Small<br />Business Owners, And Creatives
           </h2>
           <p className="text-xl mb-8">
@@ -192,7 +221,10 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold tracking-widest text-gray-700 mb-4">C L A I M  Y O U R</h2>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+            <h3 
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               Hardcover Copy Of 'DotCom Secrets'
             </h3>
             <p className="text-lg">
@@ -272,8 +304,16 @@ const Index = () => {
       {/* Final Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">DotCom Secrets</h2>
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          <h2 
+            className="text-3xl font-bold text-gray-800 mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            DotCom Secrets
+          </h2>
+          <h3 
+            className="text-2xl md:text-3xl font-bold text-gray-800 mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             Is The Step-By-Step Shortcut
           </h3>
           <p className="text-lg mb-8">
